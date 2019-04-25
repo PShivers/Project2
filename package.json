@@ -29,7 +29,7 @@
       "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
     },
     {
-      "url": "heroku/ruby"
+      "url": "heroku/nodejs"
     }
   ]
 }
