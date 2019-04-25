@@ -1,26 +1,29 @@
-const express = require('express')
-const app = express()
-const methodOverride = require('method-override')
-const logger = require('morgan')
-const routes = require('./routes/index.js')
-const apiRoutes = require('./routes/api.js')
+const express = require('express');
+const app = express();
+const methodOverride = require('method-override');
 
-// Register middleware
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+const userApi = require('./api/userApi.js');
+const locationApi = require('./api/locationApi.js');
+
+//sets up hbs
+app.set('view engine', 'hbs');
+app.use(express.static(__dirname + "/public"));
+
+//setup middleware for handling html forms
+//where body is a query string 
+app.use(express.urlencoded());
+
+//allows html forms to use a "hack" which allows
+//PUT/PATCH/DELETE
+// e.g: /foo?_method=DELETE
 app.use(methodOverride('_method'))
 
-app.use(logger('dev'))
+app.get('/', (req, res) => {
+    res.render("users/index")
+});
 
-app.use(express.static(__dirname + '/public'))
-
-app.set('view engine', 'hbs')
-
-app.use('/', routes)
-app.use('/api/v1', apiRoutes)
-
-const PORT = process.env.PORT || 3000 
-
+//ALWAYS AT BOTTOM OF FILE
+const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`App is listening on PORT ${PORT}`)
-})
+    console.log("server has started");
+});
