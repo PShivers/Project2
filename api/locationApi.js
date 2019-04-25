@@ -1,11 +1,9 @@
-const mongoose = require('./connection.js');
+const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 let LocationSchema = mongoose.Schema({
     name: String,
     sleepingSurface: String,
-    temp: Number,
-    fan: Boolean,
     lighting: String,
     UserId: ObjectId
 });
