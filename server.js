@@ -19,11 +19,24 @@ app.use(express.urlencoded());
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-    res.render("users/index")
+    res.render("index")
+});
+
+app.get('/user', (req, res) => {
+    res.render('user')
+});
+
+app.get('/night', (req, res) => {
+    res.render('night')
+});
+
+app.get('/location', (req, res) => {
+    res.render('location')
 });
 
 //ALWAYS AT BOTTOM OF FILE
 const PORT = 3000;
-app.listen(PORT, () => {
-    console.log("server has started");
-});
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
