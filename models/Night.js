@@ -1,11 +1,13 @@
-let mongoose = require('mongoose')
-const ObjectId = mongoose.Schema.Types.ObjectId;
+const mongoose = require('./connection');
+const Schema = mongoose.Schema;
 
-let NightSchema = mongoose.Schema({
-    name: String,
-    sleepingSurface: String,
+let NightSchema = new Schema({
+    date: String,
+    bedding: String,
     temp: Number,
     fan: Boolean,
-    lighting: String,
-    UserId: ObjectId
+    lighting: String
 });
+
+const Night = mongoose.model('night', NightSchema)
+module.exports = Night;
