@@ -1,6 +1,6 @@
 const mongoose = require('./connection.js');
 
-const UserCollection = require("../models/User")
+const UserCollection = require("../models/User");
 
 // function getUserById(userId) {
 //   return UserCollection.findById(userId);
@@ -15,10 +15,12 @@ function changeUserName() {
 }
 
 function addLocation() {
-    return UserCollection.
+    return UserCollection.create();
 }
 
 module.exports = {
     getUserById,
-    createUser
+    createUser,
+    changeUserName
 }
+

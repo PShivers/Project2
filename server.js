@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const mongoose = require('mongoose');
 
 const userApi = require('./api/userApi.js');
-const locationApi = require('./api/locationApi.js');
+const morningReportApi = require('./api/morningReportApi.js');
 
 //sets up hbs
 app.set('view engine', 'hbs');
