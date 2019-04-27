@@ -1,7 +1,7 @@
-const mongoose = require('./connection.js');
+const mongoose = require('../db/connection');
 
 
-let NightCollection = mongoose.model('Location', LocationSchema);
+// let NightCollection = mongoose.model('Night', NightSchema);
 
 function createNight(night) {
     return NightCollection.create(night);

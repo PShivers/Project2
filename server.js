@@ -31,14 +31,18 @@ app.get('/night', (req, res) => {
     res.render('night')
 });
 
+app.get('/nights', (req, res) => {
+    res.render('nights')
+});
+
 app.get('/location', (req, res) => {
     res.render('location')
 });
 
 //ALWAYS AT BOTTOM OF FILE
-const PORT = process.env.PORT || 3000;
+// const PORT = 3000;
 
-app.listen(process.env.PORT, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 }); //https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10
 

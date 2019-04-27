@@ -1,3 +1,26 @@
 h1 {
     color:orange
 }
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin: 0 20%;
+}
+
+.app-name{
+    background:aqua;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

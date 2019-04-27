@@ -1,28 +1,18 @@
+const mongoose = require('../db/connection');
 
+// let MorningReportCollection = mongoose.model('MorningReport', MorningReportSchema);
 
-const mongoose = require('mongoose');
-const ObjectId = mongoose.Schema.Types.ObjectId;
+// function createLocation(location) {
+//     return LocationCollection.create(location);
+// }
 
-let LocationSchema = mongoose.Schema({
-    name: String,
-    sleepingSurface: String,
-    lighting: String,
-    UserId: ObjectId
-});
-
-let LocationCollection = mongoose.model('Location', LocationSchema);
-
-function createLocation(location) {
-    return LocationCollection.create(location);
-}
-
-function getLocationByUserId(userId) {
-    //these two lines are the same :)
-    //return AccountCollection.find({ userId: userId }); 
-    return AccountCollection.find({ userId });
-}
+// function getLocationByUserId(userId) {
+//     //these two lines are the same :)
+//     //return AccountCollection.find({ userId: userId }); 
+//     return AccountCollection.find({ userId });
+// }
 
 module.exports = {
-    createLocation,
-    getLocationByUserId
+    // createLocation,
+    // getLocationByUserId
 }

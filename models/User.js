@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     name: String,
     age: Number,
     locations: String,
-    Nights: Night
+    nights: Night
 });
 
 const User = mongoose.model('user', UserSchema)
