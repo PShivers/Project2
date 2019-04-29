@@ -1,48 +1,57 @@
-const express = require('express');
-const app = express();
-const methodOverride = require('method-override');
-const mongoose = require('./db/connection');
+const http = require('http');
+
+const app = require('./app');
+//ALWAYS AT BOTTOM OF FILE
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer(app);
+
+server.listen(PORT, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+}); //https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10
+
+
+// const express = require('express');
+// const methodOverride = require('method-override');
+// const userController = require('./api/controllers/users');
+// const nightRouter = require('./api/routes/night')
 
 // const userApi = require('./api/userApi.js');
 // const morningReportApi = require('./api/morningReportApi.js');
 
 //sets up hbs
-app.set('view engine', 'hbs');
-app.use(express.static(__dirname + "/public"));
+// app.set('view engine', 'hbs');
+// app.use(express.static(__dirname + "/public"));
 
 //setup middleware for handling html forms
 //where body is a query string 
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 //allows html forms to use a "hack" which allows
 //PUT/PATCH/DELETE
 // e.g: /foo?_method=DELETE
-app.use(methodOverride('_method'))
+// app.use(methodOverride('_method'))
 
-app.get('/', (req, res) => {
-    res.render("index")
-});
 
-app.get('/user', (req, res) => {
-    res.render('user')
-});
+// app.use('/night', nightRouter)
+// app.get('/', (req, res) => {
+//     res.render("index")
+// });
 
-app.get('/night', (req, res) => {
-    res.render('night')
-});
+// app.get('/user', (req, res) => {
+//     res.render('user')
+// });
 
-app.get('/nights', (req, res) => {
-    res.render('nights')
-});
+// app.get('/night', (req, res) => {
+//     res.render('night')
+// });
 
-app.get('/location', (req, res) => {
-    res.render('location')
-});
+// app.get('/nights', (req, res) => {
+//     res.render('nights')
+// });
 
-//ALWAYS AT BOTTOM OF FILE
-// const PORT = 3000;
+// app.get('/location', (req, res) => {
+    //     res.render('location')
+// });
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-}); //https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10
 

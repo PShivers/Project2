@@ -1,4 +1,4 @@
-const mongoose = require('../db/connection');
+const mongoose = require('../../db/connection');
 
 
 // let NightCollection = mongoose.model('Night', NightSchema);

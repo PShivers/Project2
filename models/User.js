@@ -1,15 +1,16 @@
 const mongoose = require('../db/connection');
 const Schema = mongoose.Schema;
-const Night = require('./Night');
+// const Night = require('./Night');
 
 //Create schemas and model
 
-const UserSchema = new Schema({
+const User = new Schema({
     name: String,
     age: Number,
-    locations: String,
-    nights: Night
+    weight: Number
+    // sleepLog: { NightsCollection }
 });
 
-const User = mongoose.model('user', UserSchema)
-module.exports = User;
+
+
+module.exports = mongoose.model('User', User)

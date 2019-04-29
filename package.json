@@ -4,7 +4,7 @@
   "description": "Repo connected",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
@@ -19,10 +19,11 @@
   "homepage": "https://github.com/PShivers/Project2#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.5.2",
     "handlebars": "^4.1.2",
-    "hbs": "^4.0.4"
+    "hbs": "^4.0.4",
+    "method-override": "^3.0.0",
+    "mocha": "^6.1.4",
+    "mongoose": "^5.5.2"
   },
   "buildpacks": [
     {
