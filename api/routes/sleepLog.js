@@ -5,6 +5,10 @@ router.get('/', (req, res, next) => {
   res.render('sleepLog/nightsRead');
 });
 
+router.get('/nightGet', (req, res, next) => {
+  res.render('sleepLog/nightGet');
+});
+
 router.get('/nightPost', (req, res, next) => {
   res.render('sleepLog/nightPost');
 });

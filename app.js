@@ -3,14 +3,14 @@ const app = express();
 const methodOverride = require('method-override');
 
 //routes
-const userRoutes = require('./api/routes/user');
+const usersRoutes = require('./api/routes/users');
 const sleepLogRoutes = require('./api/routes/sleepLog');
 const indexRoutes = require('./api/routes/index')
 
 //things to apply
 app.use('/', indexRoutes)
 app.use('/sleepLog', sleepLogRoutes);
-app.use('/user', userRoutes);
+app.use('/users', usersRoutes);
 
 //setting hbs
 app.set('view engine', 'hbs');
