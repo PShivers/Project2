@@ -2,6 +2,9 @@ h1 {
     color:orange
 }
 
+hr {
+    width:100%;
+}
 .nav {
     display: flex;
     flex-direction: row;
