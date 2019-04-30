@@ -4,26 +4,9 @@
 {{#each users}}
 
 <li>
-
   <h2>
-
     <a href="./users/{{_id}}">{{name}}</a>
-
   </h2>
-
-  <h3>
-
-    Age: {{age}}
-
-  </h3>
-
-  <h3>
-
-    Weight: {{weight}} lbs
-
-  </h3>
-  <form id="delete-user" method="DELETE" action="./users">
-    <input type="submit" value="delete user">
 </li>
 
 {{/each}}

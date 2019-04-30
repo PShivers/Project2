@@ -1,7 +1,7 @@
-const UserCollection = require('../models/usersModel')
+const UsersCollection = require('../models/usersModel')
 
 function createUser(name, age, weight) {
-  UserCollection({ name: name, age: age, weight: weight }).save().then(doc => {
+  UsersCollection({ name: name, age: age, weight: weight }).save().then(doc => {
     console.log(doc)
   })
     .catch(err => {
@@ -10,11 +10,11 @@ function createUser(name, age, weight) {
 }
 
 function findUser(userId) {
-  UserCollection.find({ _id: userId });
+  UsersCollection.find({ _id: userId });
 }
 
 function deleteUser(userId) {
-  UserCollection.deleteOne(userId);
+  UsersCollection.deleteOne(userId);
 }
 
 module.exports = {
