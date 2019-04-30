@@ -25,27 +25,33 @@ module.exports = function (app) {
 
   app.post('/users/createUser', (req, res) => {
     //get data from the view and pass it to mogodb
-    console.log(req.body);
     UsersApi.createUser(req.body.name, req.body.age, req.body.weight);
     res.render('users/createdUser', { user: req.body })
   });
 
   app.get('/users/:id', (req, res) => {
+    // let id = req.params.id;
+    console.log(UsersApi.findUser(req.params.id));
     let user = UsersApi.findUser(req.params.id)
-    res.render('users/userProfile', { user: user })
+      res.render('users/userProfile', { user: user });
   });
 
   app.get('/users/editUser', (req, res) => {
-    res.render('users/editUser', { user: req.params.id })
+    res.render('users/editUser', { user: req.params.id });
   });
 
   app.patch('/users/editUser', (req, res) => {
-    res.render('users/editUser', { user: req.params.id })
+    res.render('users/editUser', { user: req.params.id });
   });
 
   app.delete('/users/editUser', (req, res) => {
-    UsersApi.deleteUser(_id)
+    UsersApi.deleteUser(_id);
     res.render('users/deletedUser')
   });
 
+  // app.delete('/users', (req, res) => {
+  //   console.log(req.body)
+  //   UsersApi.deleteUser();
+  //   res.render('users/deletedUser')
+  // });
 }

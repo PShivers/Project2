@@ -5,11 +5,15 @@ h1 {
 hr {
   width:100%;
 }
+
 .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+ul {
 }
 
 li {

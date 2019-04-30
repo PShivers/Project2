@@ -10,7 +10,7 @@ const Users = new Schema({
 });
 
 //create new model, pass that model the  VVV schema created above
-let UserModel = mongoose.model('Users', Users);
+let UsersModel = mongoose.model('Users', Users);
 //export model for use in other modules
-module.exports = UserModel;
+module.exports = UsersModel;
 
