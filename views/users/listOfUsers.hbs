@@ -1,9 +1,9 @@
 <h1> List of Users </h1>
-{{!-- 
-<ol>
+
+<ul>
   {{#each users}}
-  <li>{{name}}</li>
-  {{#each}}
-</ol> --}}
+  <li><a href="./users/{{_id}}">{{name}}</a></li>
+  {{/each}}
+</ul>
 
 <h2><a href="../users/createUser">Create New Profile</a></a><br>

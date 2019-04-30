@@ -1,37 +1,20 @@
 {
-  "name": "project2",
+  "name": "project2redux",
   "version": "1.0.0",
-  "description": "Repo connected",
-  "main": "server.js",
-  "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PShivers/Project2.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PShivers/Project2/issues"
-  },
-  "homepage": "https://github.com/PShivers/Project2#readme",
+  "description": "",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
-    "handlebars": "^4.1.2",
     "hbs": "^4.0.4",
     "method-override": "^3.0.0",
-    "mocha": "^6.1.4",
-    "mongoose": "^5.5.2"
+    "mongoose": "^5.5.4"
   },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
-    },
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

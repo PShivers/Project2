@@ -19,5 +19,3 @@ mongoose.connection.once('open', function () {
 
 //mine
 module.exports = mongoose;
-
-
