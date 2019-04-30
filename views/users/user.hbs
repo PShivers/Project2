@@ -1,5 +1,8 @@
-<h1> {{ user.name}} </h1>
+<h1> {{ data.name }}'s Profile </h1>
+<hr>
+<h2> Age: {{ data.age }}</h2>
+<h2> Weight: {{ data.weight }} lbs</h2>
 
+<h2><a href="../sleepLog/nightsRead/{{data.name}}">{{data.name}}'s Sleep Log</a></h2>
 
-<a href="./sleepLog">List of nights</a>
-<a href="./">Back to home</a>
+<button>Edit Profile</button>

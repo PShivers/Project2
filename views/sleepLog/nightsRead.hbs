@@ -1,6 +1,11 @@
-<h1>Sleep Log</h1>
-
-<h3> <a href="sleepLog/nightPost">Add new log.</a></h3>
+<h1>{{data.name}}'s Sleep Log</h1>
+<h2>
+  {{#each data.sleepLog}}
+  {{!-- each of theses need to be links to corresponding nights (by id?) --}}
+  <li>{{this}}</li>
+  {{/each}}
+</h2>
+<h3> <a href="../../sleepLog/nightPost">Log new night</a></h3>
 {{!-- <h1> {{night}} </h1>
 {{#each night}}
 etc --}}

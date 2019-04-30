@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser')
+const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 router.get('/', (req, res) => {
+  res.status(200); 
   res.render("users/index")
 });
 

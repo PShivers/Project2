@@ -1,9 +1,8 @@
-const mongoose = require('../db/connection');
+const mongoose = require('../../db/connection');
 const Schema = mongoose.Schema;
 // const Night = require('./Night');
 
 //Create schemas and model
-
 const User = new Schema({
     name: String,
     age: Number,
@@ -11,6 +10,5 @@ const User = new Schema({
     // sleepLog: { NightsCollection }
 });
 
-
-
-module.exports = mongoose.model('User', User)
+//export model for use in other modules
+module.exports = mongoose.model('Users', Users)
