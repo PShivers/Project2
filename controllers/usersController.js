@@ -30,10 +30,9 @@ module.exports = function (app) {
   });
 
   app.get('/users/:id', (req, res) => {
-    // let id = req.params.id;
-    console.log(UsersApi.findUser(req.params.id));
-    let user = UsersApi.findUser(req.params.id)
-      res.render('users/userProfile', { user: user });
+    UsersApi.findUser(req.params.id).then(doc => {
+      res.render('users/userProfile', { user: doc });
+    })
   });
 
   app.get('/users/editUser', (req, res) => {
