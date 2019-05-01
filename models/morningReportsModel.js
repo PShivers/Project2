@@ -13,7 +13,7 @@ const MorningReports = new Schema({
 });
 
 //create new model, pass that model the  VVV schema created above
-let MorningReportsModel = mongoose.model('MornginReportsCollection', MorningReports);
+let MorningReportsModel = mongoose.model('MorningReportsCollection', MorningReports);
 //export model for use in other modules
 module.exports = MorningReportsModel;
 

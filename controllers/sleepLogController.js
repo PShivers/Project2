@@ -21,7 +21,7 @@ module.exports = function (app) {
     // let user = req.params.id
     //get data  from the view and pass it to mogodb
     SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp);
-    res.render('sleepLog/singleNight', { night: req.body })
+    res.render('sleepLog/createdNight', { night: req.body })
   });
 
   app.get('/sleepLog/:id', (req, res) => {

@@ -21,13 +21,13 @@ module.exports = function (app) {
     res.render('morningReports/createdMorningReport', { morning: req.body })
   });
 
-  // app.get('/sleepLog/:id', (req, res) => {
-  //   SleepLogApi
-  //     .findNight(req.params.id)
-  //     .then(doc => {
-  //       res.render('sleepLog/singleNight', { night: doc });
-  //     })
-  // });
+  app.get('/morningReports/:id', (req, res) => {
+    MorningReportsApi
+      .findMorningReport(req.params.id)
+      .then(doc => {
+        res.render('morningReports/singleMorningReport', { morning: doc });
+      })
+  });
 
   // app.delete('/sleepLog/:id', (req, res) => {
   //   SleepLogApi
