@@ -1,9 +1,14 @@
-<form id="edit-user" method="POST" action="./editUser">
+<h1> {{ user.name }}'s Profile </h1>
+<hr>
+<h2> Age: {{ user.age }}</h2>
+<h2> Weight: {{ user.weight }} lbs</h2>
+
+
+
+<form id="edit-user" method="POST" action="./editUser/{{user.id}}?_method=PUT">
   <p>Name<input type="text" name="name"></p>
   <p>Age<input type="text" name="age"></p>
   <p>Weight<input type="text" name="weight"></p>
   <input type="submit" value="Submit Changes">
 </form>
-  <br>
-
-  
+<br>

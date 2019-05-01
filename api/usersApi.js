@@ -11,12 +11,17 @@ function findUser(userId) {
   return UsersCollection.findById({ _id: userId });
 }
 
+function updateUser(old, update) {
+  return UsersCollection.updateOne(old, update);
+}
+
 function deleteUser(userId) {
   return UsersCollection.findByIdAndRemove({ _id: userId })
 }
 
 
 module.exports = {
+  updateUser,
   listUsers,
   createUser,
   findUser,

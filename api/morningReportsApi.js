@@ -3,9 +3,11 @@ const MorningReportCollection = require('../models/morningReportsModel')
 function listAllMorningReports() {
   return MorningReportCollection.find();
 }
+
 function readMorningReport(userId) {
   return MorningReportCollection.find({ userId });
 }
+
 function createMorningReport(date, rating, mood, notes) {
   MorningReportCollection({ date: date, rating: rating, mood: mood, notes: notes}).save();
 }

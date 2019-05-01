@@ -29,38 +29,12 @@ module.exports = function (app) {
       })
   });
 
-  // app.delete('/sleepLog/:id', (req, res) => {
-  //   SleepLogApi
-  //     .deleteNight(req.params.id)
-  //     .then(() => {
-  //       res.redirect('/sleepLog')
-  //     });
-  // });
+  app.delete('/morningReports/:id', (req, res) => {
+    MorningReportsApi
+      .deleteMorningReport(req.params.id)
+      .then(() => {
+        res.redirect('/morningReports');
+      })
+  });
 
-  // app.delete('/users/:id', (req, res) => {
-  //   res.send('got a DELETE request')
-  //   // UsersApi.deleteUser(req.params.id)
-  //   //   .then(() => {
-  //   //     res.redirect('/users')
-  //   //   });
-  //   //delete user then
-  // });
-
-
-
-
-  // app.get('/users/editUser', (req, res) => {
-  //   res.render('users/editUser', { user: req.params.id });
-  // });
-
-  // app.patch('/users/editUser', (req, res) => {
-  //   res.render('users/editUser', { user: req.params.id });
-  // });
-
-
-  // app.delete('/users', (req, res) => {
-  //   console.log(req.body)
-  //   UsersApi.deleteUser();
-  //   res.render('users/deletedUser')
-  // });
 };

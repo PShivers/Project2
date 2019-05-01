@@ -47,13 +47,29 @@ module.exports = function (app) {
     //delete user then
   });
 
-  app.get('/users/editUser', (req, res) => {
-    res.render('users/editUser', { user: req.params.id });
+  app.get('/users/editUser/:id', (req, res) => {
+    UsersApi.findUser(req.params.id)
+      .then(user => {
+        res.render('users/editUser', { user: req.params.id });
+      })
   });
 
-  app.patch('/users/editUser', (req, res) => {
-    res.render('users/editUser', { user: req.params.id });
+  app.put('/users/editUser/:id', (req, res) => {
+    UsersApi.findUser(req.params.id)
+      .then(user => {
+        let updatedUser = {
+          name: req.body.name,
+          age: req.body.age,
+          weight: req.body.weight
+        }
+        UsersApi.updateUser(user, updatedUser)
+          .then(() => {
+            res.direct(`users/${user._id}`)
+          })
+      })
   });
+
+
 
 
   // app.delete('/users', (req, res) => {
