@@ -1,5 +1,8 @@
 const UsersCollection = require('../models/usersModel')
 
+function listUsers() {
+  return UsersCollection.find({});
+}
 function createUser(name, age, weight) {
   UsersCollection({ name: name, age: age, weight: weight }).save();
 }
@@ -9,12 +12,12 @@ function findUser(userId) {
 }
 
 function deleteUser(userId) {
-  return UsersCollection.deleteOne(userId);
+  return UsersCollection.findByIdAndRemove({ _id: objectId(userId) })
 }
 
-// console.log(findUser('5cc8c72a2b1124640db519b0'));
 
 module.exports = {
+  listUsers,
   createUser,
   findUser,
   deleteUser

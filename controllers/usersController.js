@@ -30,10 +30,24 @@ module.exports = function (app) {
   });
 
   app.get('/users/:id', (req, res) => {
-    UsersApi.findUser(req.params.id).then(doc => {
-      res.render('users/userProfile', { user: doc });
-    })
+    UsersApi
+      .findUser(req.params.id)
+      .then(doc => {
+        res.render('users/userProfile', { user: doc });
+      })
   });
+
+  app.delete('users/:id', (req, res) => {
+    res.send('got a DELETE')
+    // UsersApi.deleteUser(req.params.id)
+    //   .then(() => {
+    //     res.redirect('/users')
+    //   });
+    //delete user then
+  });
+
+
+
 
   app.get('/users/editUser', (req, res) => {
     res.render('users/editUser', { user: req.params.id });
@@ -43,10 +57,6 @@ module.exports = function (app) {
     res.render('users/editUser', { user: req.params.id });
   });
 
-  app.delete('/users/editUser', (req, res) => {
-    UsersApi.deleteUser(_id);
-    res.render('users/deletedUser')
-  });
 
   // app.delete('/users', (req, res) => {
   //   console.log(req.body)

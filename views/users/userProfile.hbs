@@ -3,6 +3,12 @@
 <h2> Age: {{ user.age }}</h2>
 <h2> Weight: {{ user.weight }} lbs</h2>
 
-<h2><a href="../sleepLog/nightsRead/{{user.name}}">{{user.name}}'s Sleep Log</a></h2>
 
-<button><a href="./editUser">Edit Profile</button>
+<h2><a href="../sleepLog/{{user.id}}">{{user.name}}'s Sleep Log</a></h2>
+
+
+{{!-- <button><a href="./editUser">Edit Profile</button> --}}
+<br>
+<form id="delete-user" method="DELETE" action="./:id">
+  {{!-- <label for='deleting user'> --}}
+  <input type="submit" value="Delete User">

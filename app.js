@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser')
 //import controllers
 const usersController = require('./controllers/usersController');
-
+const sleepLogController = require('./controllers/sleepLogController')
 //use handlebars as template engine
 app.set('view engine', 'hbs');
 
@@ -16,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 //fire controllers
 usersController(app);
 // sleepLogController(app);
-
+sleepLogController(app);
 
 
 
