@@ -31,3 +31,14 @@ li {
   justify-content: center;
   align-items: center;
 }
+
+.sleepLog{
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.nav-item {
+  background: purple;
+  width: 100%;
+  
+}

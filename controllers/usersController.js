@@ -44,17 +44,16 @@ module.exports = function (app) {
       .then(() => {
         res.redirect('/users')
       });
-    //delete user then
   });
 
-  app.get('/users/editUser/:id', (req, res) => {
+  app.get('/editUser/:id', (req, res) => {
     UsersApi.findUser(req.params.id)
       .then(user => {
-        res.render('users/editUser', { user: req.params.id });
+        res.render('users/editUser', { user: user });
       })
   });
 
-  app.put('/users/editUser/:id', (req, res) => {
+  app.put('/editUser/:id', (req, res) => {
     UsersApi.findUser(req.params.id)
       .then(user => {
         let updatedUser = {
@@ -64,7 +63,7 @@ module.exports = function (app) {
         }
         UsersApi.updateUser(user, updatedUser)
           .then(() => {
-            res.direct(`users/${user._id}`)
+            res.render("users/updatedUser")
           })
       })
   });
