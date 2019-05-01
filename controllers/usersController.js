@@ -38,12 +38,12 @@ module.exports = function (app) {
       })
   });
 
-  app.delete('users/:id', (req, res) => {
-    res.send('got a DELETE')
-    // UsersApi.deleteUser(req.params.id)
-    //   .then(() => {
-    //     res.redirect('/users')
-    //   });
+  app.delete('/users/:id', (req, res) => {
+    // res.send('got a DELETE req ready')
+    UsersApi.deleteUser(req.params.id)
+      .then(() => {
+        res.redirect('/users')
+      });
     //delete user then
   });
 

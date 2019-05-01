@@ -12,7 +12,7 @@ function findUser(userId) {
 }
 
 function deleteUser(userId) {
-  return UsersCollection.findByIdAndRemove({ _id: objectId(userId) })
+  return UsersCollection.findByIdAndRemove({ _id: userId })
 }
 
 

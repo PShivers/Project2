@@ -9,8 +9,8 @@
 
 {{!-- <button><a href="./editUser">Edit Profile</button> --}}
 <br>
-<form id="delete-user" method="DELETE" action="./:id">
+<form id="delete-user" method="POST" action="/users/{{user.id}}?_method=DELETE">
   <label for='deleting user'>
-    <input type="submit" value="Delete User">
+    <input type="submit" name="_method" value="delete">
   </label>
 </form>
