@@ -1,5 +1,14 @@
 <h1>{{night.date}}</h1>
-{{night.hoursSlept}}
-{{night.bedtime}}
-{{night.temp}}
+<h2>Hours Slept: {{night.hoursSlept}}</h2>
+<h2>Bedtime: {{night.bedtime}}</h2>
+<h2>Temperature: {{night.temp}}</h2>
 {{!-- link to morning report --}}
+
+<a href="../morningReports/createMorningReport">Add morning report</a>
+<br>
+
+  <form id="delete-night" method="POST" action="/sleepLog/{{night.id}}?_method=DELETE">
+    <label for='deleting night'>
+      <input type="submit" name="_method" value="delete">
+    </label>
+  </form>

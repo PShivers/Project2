@@ -1,22 +1,24 @@
 const express = require('express');
 const app = express();
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 //import controllers
 const usersController = require('./controllers/usersController');
-const sleepLogController = require('./controllers/sleepLogController')
+const sleepLogController = require('./controllers/sleepLogController');
+const morningReportsController = require('./controllers/morningReportsController');
 //use handlebars as template engine
 app.set('view engine', 'hbs');
 
 //point at CSS file
 app.use(express.static(__dirname + "/public"));
 //allow delete/put request
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 //used to parse req.body for POST requests
 app.use(express.urlencoded({ extended: true }));
 
 //fire controllers
 sleepLogController(app);
 usersController(app);
+morningReportsController(app);
 // sleepLogController(app);
 
 

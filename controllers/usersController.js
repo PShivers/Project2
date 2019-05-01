@@ -47,9 +47,6 @@ module.exports = function (app) {
     //delete user then
   });
 
-
-
-
   app.get('/users/editUser', (req, res) => {
     res.render('users/editUser', { user: req.params.id });
   });

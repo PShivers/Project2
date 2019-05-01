@@ -1,5 +1,8 @@
 const SleepLogCollection = require('../models/nightsModel')
 
+function listAllNights() {
+  return SleepLogCollection.find();
+}
 function listNights(userId) {
   return SleepLogCollection.find({ userId });
 }
@@ -12,12 +15,13 @@ function findNight(nightId) {
 }
 
 function deleteNight(nightId) {
-  return SleepLogCollection.findByIdAndRemove({ _id: objectId(nightId) })
+  return SleepLogCollection.findByIdAndRemove({ _id: nightId })
 }
 
 // createNight(11/23/2019,10,8,70);
 
 module.exports = {
+  listAllNights,
   listNights,
   createNight,
   findNight,

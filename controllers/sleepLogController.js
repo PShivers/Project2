@@ -1,4 +1,4 @@
-const SleepLogCollection = require('../models/nightsModel');
+// const SleepLogCollection = require('../models/nightsModel');
 const SleepLogApi = require('../api/sleepLogApi');
 //dummy data 
 // data = [{ id: 1, name: "paul", age: 33, weight: 240 }, { id: 2, name: "chris", age: 34, weight: 150 }, { id: 3, name: "John", age: 33, weight: 135 }]
@@ -6,34 +6,39 @@ const SleepLogApi = require('../api/sleepLogApi');
 //controller has routes and behaviors
 module.exports = function (app) {
 
-  // app.get('/sleepLog/:id', (req, res) => {
-  //   let userId = req.params.id;
-  //   // SleepLogApi.listNights(userId), (err, data) => {
-  //   //   if (err) throw err;
-  //   // res.render("sleepLog/listOfNights", { nights: data })
-  //   // }
-  // });
+  app.get('/sleepLog/', (req, res) => {
+    SleepLogApi.listAllNights().then(data => {
+      res.render("sleepLog/listOfNights", { nights: data })
+    })
+  });
 
-  app.get('/sleepLog/createNight', (req, res) => {
-    // SleepLogApi.createNight();
-    // res.send('ready for GET req at sleepLog/createNight')
+  app.get('/sleepLog/createNight/:id', (req, res) => {
     res.render("sleepLog/createNight")
   });
 
-  app.post('/sleepLog/createNight', (req, res) => {
+  app.post('/sleepLog/createNight/:id', (req, res) => {
     console.log(req.body)
-    //get data from the view and pass it to mogodb
-    SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp);
-    res.render('sleepLog/createdNight', { night: req.body })
+    let user = req.params.id
+    //get data  from the view and pass it to mogodb
+    SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp, user);
+    res.render('sleepLog/singleNight', { night: req.body })
   });
 
-  // app.get('/users/:id', (req, res) => {
-  //   UsersApi
-  //     .findUser(req.params.id)
-  //     .then(doc => {
-  //       res.render('users/userProfile', { user: doc });
-  //     })
-  // });
+  app.get('/sleepLog/:id', (req, res) => {
+    SleepLogApi
+      .findNight(req.params.id)
+      .then(doc => {
+        res.render('sleepLog/singleNight', { night: doc });
+      })
+  });
+
+  app.delete('/sleepLog/:id', (req, res) => {
+    SleepLogApi
+      .deleteNight(req.params.id)
+      .then(() => {
+        res.redirect('/sleepLog')
+      });
+  });
 
   // app.delete('/users/:id', (req, res) => {
   //   res.send('got a DELETE request')
