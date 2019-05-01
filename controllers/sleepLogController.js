@@ -12,15 +12,15 @@ module.exports = function (app) {
     })
   });
 
-  app.get('/sleepLog/createNight/:id', (req, res) => {
+  app.get('/sleepLog/createNight/', (req, res) => {
     res.render("sleepLog/createNight")
   });
 
-  app.post('/sleepLog/createNight/:id', (req, res) => {
+  app.post('/sleepLog/createNight/', (req, res) => {
     console.log(req.body)
-    let user = req.params.id
+    // let user = req.params.id
     //get data  from the view and pass it to mogodb
-    SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp, user);
+    SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp);
     res.render('sleepLog/singleNight', { night: req.body })
   });
 

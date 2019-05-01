@@ -1,7 +1,9 @@
 list of morning reports
 
 <ul>
-  {{#each morning}}
-  <li>Date: {{date}}</li>
+  {{#each mornings}}
+  <li>
+    <a href='./sleepLog/{{_id}}'> {{date}} </a>
+  </li>
   {{/each}}
 </ul>

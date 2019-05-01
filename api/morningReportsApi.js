@@ -6,8 +6,8 @@ function listAllMorningReports() {
 function readMorningReport(userId) {
   return MorningReportCollection.find({ userId });
 }
-function createMorningReport(date, bedtime, hoursSlept, temp) {
-  MorningReportCollection({ date: date, bedtime: bedtime, hoursSlept: hoursSlept, temp: temp }).save();
+function createMorningReport(date, rating, mood, notes) {
+  MorningReportCollection({ date: date, rating: rating, mood: mood, notes: notes}).save();
 }
 
 function findMorningReport(nightId) {

@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 //Create User Schema
 const Nights = new Schema({
-  date: Date,
+  date: String,
   hoursSlept: Number,
   bedtime: Number,
   temp: Number,
