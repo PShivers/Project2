@@ -5,10 +5,12 @@
 
 
 <h2><a href="../sleepLog/{{user.id}}">{{user.name}}'s Sleep Log</a></h2>
-
+<a href="../sleepLog/createNight">Add night</a>
 
 {{!-- <button><a href="./editUser">Edit Profile</button> --}}
 <br>
 <form id="delete-user" method="DELETE" action="./:id">
-  {{!-- <label for='deleting user'> --}}
-  <input type="submit" value="Delete User">
+  <label for='deleting user'>
+    <input type="submit" value="Delete User">
+  </label>
+</form>

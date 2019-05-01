@@ -1,4 +1,4 @@
-// const SleepLogCollection = require('../models/nightsModel');
+const SleepLogCollection = require('../models/nightsModel');
 const SleepLogApi = require('../api/sleepLogApi');
 //dummy data 
 // data = [{ id: 1, name: "paul", age: 33, weight: 240 }, { id: 2, name: "chris", age: 34, weight: 150 }, { id: 3, name: "John", age: 33, weight: 135 }]
@@ -6,30 +6,26 @@ const SleepLogApi = require('../api/sleepLogApi');
 //controller has routes and behaviors
 module.exports = function (app) {
 
-  app.get('/sleepLog', (req, res) => {
-    res.send("ready for get request")
-    // let userId = req.params.id;
-    // //get data from mongodb and pass it to view listofusers
-    // SleepLogApi.listNights(userId), (err, data) => {
-    //   if (err) throw err;
-    //   res.render("sleeplog/listOfNights", { nights: data })
-    // }
+  // app.get('/sleepLog/:id', (req, res) => {
+  //   let userId = req.params.id;
+  //   // SleepLogApi.listNights(userId), (err, data) => {
+  //   //   if (err) throw err;
+  //   // res.render("sleepLog/listOfNights", { nights: data })
+  //   // }
+  // });
+
+  app.get('/sleepLog/createNight', (req, res) => {
+    // SleepLogApi.createNight();
+    // res.send('ready for GET req at sleepLog/createNight')
+    res.render("sleepLog/createNight")
   });
-  //     if (err) throw err;
-  //     res.render("sleepLog/listOfNights", { users: data })
-  //   })
-  // });
 
-  // app.get('/users/createUser', (req, res) => {
-  //   SleepLogApi.createNight();
-  //   res.render("users/createUser")
-  // });
-
-  // app.post('/users/createUser', (req, res) => {
-  //   //get data from the view and pass it to mogodb
-  //   UsersApi.createUser(req.body.name, req.body.age, req.body.weight);
-  //   res.render('users/createdUser', { user: req.body })
-  // });
+  app.post('/sleepLog/createNight', (req, res) => {
+    console.log(req.body)
+    //get data from the view and pass it to mogodb
+    SleepLogApi.createNight(req.body.date, req.body.bedtime, req.body.hoursSlept, req.body.temp);
+    res.render('sleepLog/createdNight', { night: req.body })
+  });
 
   // app.get('/users/:id', (req, res) => {
   //   UsersApi

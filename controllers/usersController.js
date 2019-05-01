@@ -6,6 +6,7 @@ const UsersApi = require('../api/usersApi');
 //controller has routes and behaviors
 module.exports = function (app) {
 
+
   app.get('/', (req, res) => {
     res.render("users/home")
   });

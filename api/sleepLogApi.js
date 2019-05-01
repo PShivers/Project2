@@ -15,6 +15,7 @@ function deleteNight(nightId) {
   return SleepLogCollection.findByIdAndRemove({ _id: objectId(nightId) })
 }
 
+// createNight(11/23/2019,10,8,70);
 
 module.exports = {
   listNights,

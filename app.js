@@ -13,9 +13,9 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
 //fire controllers
+sleepLogController(app);
 usersController(app);
 // sleepLogController(app);
-sleepLogController(app);
 
 
 
