@@ -20,7 +20,6 @@ module.exports = function (app) {
   });
 
   app.get('/users/createUser', (req, res) => {
-    UsersApi.createUser()
     res.render("users/createUser")
   });
 

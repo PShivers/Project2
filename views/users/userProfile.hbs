@@ -4,13 +4,13 @@
 <h2> Weight: {{ user.weight }} lbs</h2>
 
 
-<h2><a href="../sleepLog/{{user.id}}">{{user.name}}'s Sleep Log</a></h2>
-<a href="../sleepLog/createNight">Add night</a>
+<h3><a href="../sleepLog/{{user.id}}">{{user.name}}'s Sleep Log</a></h3>
+<h3><a href="../sleepLog/createNight">Add night</a></h3>
 
-<button><a href="../editUser/{{user._id}}">Edit Profile</button>
+<button class="button"><a href="../editUser/{{user._id}}">Edit Profile</button>
 <br>
 <form id="delete-user" method="POST" action="/users/{{user.id}}?_method=DELETE">
   <label for='deleting user'>
-    <input type="submit" name="_method" value="delete">
+    <input type="submit" name="_method" value="Delete User">
   </label>
 </form>

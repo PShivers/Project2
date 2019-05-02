@@ -1,15 +1,11 @@
-<h1> List of Users </h1>
-
-
-{{#each users}}
-
-<li>
+<h1 class="header"> List of Users </h1>
+<hr>
+<ol>
+  {{#each users}}
   <h2>
-    <a href="./users/{{_id}}">{{name}}</a>
+    <li class="user"><a href="./users/{{_id}}">{{name}}</a></li>
   </h2>
-</li>
+  {{/each}}
+</ol>
 
-{{/each}}
-
-
-<h2><a href="../users/createUser">Create New Profile</a></a><br>
+<h2><a href="../users/createUser">Create New User</a></a><br>

@@ -1,14 +1,14 @@
 <h1>{{night.date}}</h1>
-<h2>Hours Slept: {{night.hoursSlept}}</h2>
-<h2>Bedtime: {{night.bedtime}}</h2>
-<h2>Temperature: {{night.temp}}</h2>
+<h2>Hours Slept: <span class="data">{{night.hoursSlept}}</span></h2>
+<h2>Bedtime: <span class="data">{{night.bedtime}}</span></h2>
+<h2>Temperature: <span class="data">{{night.temp}}</span></h2>
 {{!-- link to morning report --}}
 
 <a href="../morningReports/createMorningReport">Add morning report</a>
 <br>
 
-  <form id="delete-night" method="POST" action="/sleepLog/{{night.id}}?_method=DELETE">
-    <label for='deleting night'>
-      <input type="submit" name="_method" value="delete">
-    </label>
-  </form>
+<form id="delete-night" method="POST" action="/sleepLog/{{night.id}}?_method=DELETE">
+  <label for='deleting night'>
+    <input type="submit" name="_method" value="delete">
+  </label>
+</form>

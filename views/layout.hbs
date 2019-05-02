@@ -13,26 +13,28 @@
 
     <div class="wrapper">
 
-        <h1>Nea</h1>
-        {{!-- <img src="../assets/images/Nea-animation.gif" alt="logo gif"> --}}
+        <img src="../images/NEA.png" class="logo" alt="logo gif">
 
         {{!-- <h2>Ready, set, go to bed!</h2> --}}
-        <h2>Your route to ReST</h2>
+        <div class="slogan">The route to RESTfulness</div>
 
         <div class="nav">
 
-            <li class="nav-item"><a href="../">Home</a></li>
-            <li class="nav-item"><a href="../users">Users</a></li>
-            <li class="nav-item"><a href="../sleepLog">Sleep Log</a></li>
-            <li class="nav-item"><a href="../morningReports">Morning Reports</a></li>
+            <div class="nav-item" style="text-decoration: none"><a href="../">About</a></div>
+
+            <div class="nav-item" style="text-decoration: none"><a href="../users">Users</a></div>
+
+            <div class="nav-item" style="text-decoration: none"><a href="../sleepLog">Sleep Log</a></div>
+
+            <div class="nav-item" style="text-decoration: none"><a href="../morningReports">Morning Reports</a></div>
 
         </div>
 
-        <hr>
-
-        {{{ body }}}
-
     </div>
+    <hr>
+    <main>
+        {{{ body }}}
+    </main>
 
 </body>
 

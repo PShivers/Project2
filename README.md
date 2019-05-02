@@ -7,7 +7,7 @@
 
 ### ERD
 
-![entity relationship diagram](./images/project2-erd.png "project2 erd")
+![entity relationship diagram](./public/images/project2-erd.png "project2 erd")
 
 
 
