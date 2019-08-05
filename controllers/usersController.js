@@ -1,9 +1,7 @@
 const UserCollection = require('../models/usersModel');
 const UsersApi = require('../api/usersApi');
-//dummy data 
-// data = [{ id: 1, name: "paul", age: 33, weight: 240 }, { id: 2, name: "chris", age: 34, weight: 150 }, { id: 3, name: "John", age: 33, weight: 135 }]
 
-//controller has routes and behaviors
+
 module.exports = function (app) {
 
 
@@ -67,12 +65,4 @@ module.exports = function (app) {
       })
   });
 
-
-
-
-  // app.delete('/users', (req, res) => {
-  //   console.log(req.body)
-  //   UsersApi.deleteUser();
-  //   res.render('users/deletedUser')
-  // });
 }
